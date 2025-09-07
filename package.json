@@ -9,6 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.5"
+    "@fontsource-variable/onest": "^5.2.9",
+    "@fontsource/onest": "^5.2.9",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.5",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.13"
   }
 }
