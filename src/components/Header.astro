@@ -1,8 +1,87 @@
-<header class="flex justify-center py-5 w-[1120px] mx-auto">
-    <nav class="flex flex-row gap-x-15 opacity-80">
-        <a href="#top">Inicio</a>
-        <a href="#projectos">Projectos</a>
-        <a href="#sobre-mi">Sobre mi</a>
-        <a href="#contacto">Contacto</a>
+---
+import ThemeToggle from "@/components/ThemeToggle.astro";
+const navItems = [
+    {
+        title: "Inicio",
+        label: "inicio",
+        url: "/#top",
+    },
+    {
+        title: "Proyectos",
+        label: "proyectos",
+        url: "/#proyectos",
+    },
+    {
+        title: "Sobre mí",
+        label: "sobre-mi",
+        url: "/#sobre-mi",
+    },
+    {
+        title: "Contacto",
+        label: "contacto",
+        url: "mailto:cfloren01@gmail.com",
+    },
+];
+---
+
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto sm:mt-4">
+    <nav
+        id="header-nav"
+        class="flex w-full sm:w-fit px-3 py-2 sm:py-0 text-xs sm:text-sm font-medium sm:rounded-full text-gray-600 dark:text-gray-200 justify-center items-center animate-[blur-light] dark:animate-[blur-dark] transition-all duration-300 ease-in-out"
+    >
+        {
+            navItems.map((link) => (
+                <a
+                    class="relative block px-2 py-2 transition hover:text-green-900 dark:hover:text-green-500"
+                    aria-label={link.label}
+                    href={link.url}
+                >
+                    {link.title}
+                </a>
+            ))
+        }
+        <ThemeToggle />
     </nav>
 </header>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const sections = document.querySelectorAll("section");
+        const navItems = document.querySelectorAll("header nav a");
+
+        const callback = (entries: any[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navItems.forEach((item) => {
+                        if (item.getAttribute("aria-label") == entry.target.id) {
+                            item.classList.add("text-green-500");
+                        } else {
+                            item.classList.remove("text-green-500");
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3,
+        });
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Cleanup function
+        document.onvisibilitychange = () => {
+            if (document.visibilityState === "hidden") {
+                observer.disconnect();
+            } else {
+                sections.forEach((section) => {
+                    observer.observe(section);
+                });
+            }
+        };
+    });
+</script>

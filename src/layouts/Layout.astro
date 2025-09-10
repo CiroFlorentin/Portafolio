@@ -1,7 +1,8 @@
 ---
 import "@fontsource-variable/onest";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
     title: string;
@@ -9,8 +10,6 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
-
-import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -22,36 +21,94 @@ import "../styles/global.css";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <ClientRouter />
     </head>
-    <body>
+
+    <body class="relative text-black dark:text-white">
         <div
-            class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(3,46,21,0.3),rgba(255,255,255,0))]"
+            class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(15,233,62,0.1),rgba(255,255,255,0))]"
+        >
+        </div>
+
+        <div
+            class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 dark:bg-[radial-gradient(125%_125%_at_50%_10%,#031517_40%,#010308_100%)]"
         >
         </div>
         <Header />
         <slot />
         <Footer />
+
+        <style is:global>
+            :root {
+                color-scheme: light dark;
+            }
+
+            html {
+                font-family: "Onest Variable", system-ui, sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                color: rgba(17, 17, 17, 0.9);
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                overscroll-behavior: none;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    color: rgba(255, 255, 255, 0.9);
+                }
+            }
+
+            #header-nav {
+                animation: blur linear both 0.5s;
+                animation-timeline: scroll();
+                animation-range: 0 500px;
+            }
+            .dark #header-nav {
+                animation: blur-dark linear both 0.5s;
+                animation-timeline: scroll();
+                animation-range: 0 500px;
+            }
+            @keyframes blur {
+                to {
+                    backdrop-filter: blur(20px);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgb(247, 247, 255);
+
+                    box-shadow: 0px 5px 20px -5px rgba(9, 66, 21, 0.534);
+                }
+            }
+
+            @keyframes blur-dark {
+                from {
+                    border: 0px;
+                }
+                to {
+                    box-shadow:
+                        0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+                        0px 2px 10px 1px rgba(255, 255, 255, 0.041);
+
+                    backdrop-filter: blur(20px);
+                    border-width: 1px;
+                    border-color: rgba(51, 65, 85, 0.7);
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgba(51, 65, 85, 0.479);
+                }
+            }
+        </style>
     </body>
 </html>
-
-<style is:global>
-    :root {
-        color-scheme: light dark;
-    }
-
-    html {
-        font-family: "onest variable", system-ui, sans-serif;
-        scroll-behavior: smooth;
-    }
-    body {
-        background: #09090b;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-    }
-</style>

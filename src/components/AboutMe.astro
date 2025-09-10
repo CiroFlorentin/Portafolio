@@ -1,0 +1,34 @@
+---
+const personalImageAlt = "Ciro Florentin";
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+    <div
+        class="[&>p]:mb-4 [&>p>strong]:text-green-700 dark:[&>p>strong]:text-green-300 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    >
+        <p>
+            Soy un estudiante de la <strong>Licenciatura en Gestión de Tecnologías de la Información</strong> en la Universidad Nacional de José
+            C. Paz. Mi pasión es el desarrollo de soluciones digitales y la automatización de procesos, especialmente aquellos orientados al
+            ámbito educativo.
+        </p>
+
+        <p>
+            Como desarrollador autodidacta, he fortalecido mis conocimientos en lenguajes como <strong
+                >Python, HTML, CSS y JavaScript</strong
+            >. También tengo experiencia con bases de datos SQL básicas, y utilizo herramientas como Git y GitHub para la gestión de
+            proyectos. Además, estoy familiarizado con la <strong class="italic"
+                >programación orientada a objetos y el análisis de datos
+            </strong>. Mi objetivo es aplicar mis habilidades para crear un impacto significativo, a la vez que continuo mi aprendizaje y me
+            adapto a nuevos desafíos.
+        </p>
+    </div>
+
+    <img
+        width="200"
+        height="200"
+        src="https://placehold.co/300x200"
+        alt={personalImageAlt}
+        class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/10 dark:bg-green-500/20 ring-1 ring-black/50 dark:ring-green-950/70"
+        style="object-position: 50% 50%"
+    />
+</article>

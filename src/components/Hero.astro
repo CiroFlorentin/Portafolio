@@ -1,0 +1,44 @@
+---
+const personalImage = "Ciro Florentin";
+import Badge from "@/components/Badge.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import LinkedInIcon from "@/icons/LinkedIn.astro";
+import GitHubIcon from "@/icons/GitHub.astro";
+import GmailIcon from "@/icons/Gmail.astro";
+---
+
+<div class="max-w-xl">
+    <div class="flex gap-6 mb-4">
+        <img class="rounded-full shadow-lg size-16" src="/src/assets/ciroFlorentinLogo.webp" alt={personalImage} />
+
+        <a
+            href="https://www.linkedin.com/in/ciro-florentiin"
+            target="_blank"
+            rel="noopener"
+            class="flex md:justify-center items-center text-sm"
+            ><Badge />
+        </a>
+    </div>
+    <h1 class="text-gray-800 dark:text-white text-4xl sm:text-5xl font-bold tracking-tight md:gap-x-4 pb-4 lg:pb-7">
+        Hey, soy CiroFlorentin
+    </h1>
+    <p class="text-xl text-gray-800 dark:[&>strong]:text-green-300 [&>strong]:text-green-500 [&>strong]:font-semibold dark:text-gray-300">
+        <strong>Estudiante de liccenciatura en sistemas.</strong>
+        De Buenos Aires, Argentina 🇦🇷.Especializado en crear interfaces de usuario, desarrollar aplicaciones web y desarrollar soluciones de
+        software.
+    </p>
+    <nav class="flex gap-4 mt-6 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/ciro-florentiin"
+            ><LinkedInIcon class="size-6" />
+            Linkedin
+        </SocialPill>
+        <SocialPill href="https://github.com/CiroFlorentin"
+            ><GitHubIcon class="size-6" />
+            GitHub
+        </SocialPill>
+        <SocialPill href="mailto:cfloren01@gmail.com"
+            ><GmailIcon class="size-6" />
+            Contáctame
+        </SocialPill>
+    </nav>
+</div>
