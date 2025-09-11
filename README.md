@@ -1,46 +1,56 @@
-# Astro Starter Kit: Basics
+# 🚀 Ciro Florentin
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenido a mi portafolio personal desarrollado con **Astro** , **Tailwind CSS** y **Typesctipt**. Este sitio web showcase mis proyectos, habilidades y experiencia como desarrollador.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📋 Sobre mí
 
-## 🚀 Project Structure
+Soy Ciro Florentin, desarrollador apasionado por crear soluciones web innovadoras y eficientes. En este portafolio podrás encontrar mis proyectos más destacados y conocer más sobre mi trayectoria profesional.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📄 Mi CV
+
+**[📥 Descargar mi CV en PDF](./public/cv-ciro-florentin.pdf)**
+
+## 🛠️ Tecnologías utilizadas
+
+- **Framework**: Astro 5.x
+- **Estilos**: Tailwind CSS
+- **Lenguaje**: TypeScript
+- **Tipografía**: Onest (Google Fonts)
+- **Herramientas**: ESLint, Prettier
+- **SEO**: astro-robots-txt
+
+## 🚀 Estructura del proyecto
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/             # Archivos estáticos
+│   ├── favicon.svg
+│   └── cv-ciro-florentin.pdf
+├── src/
+│   ├── components/     # Componentes reutilizables
+│   ├── layouts/        # Layouts de páginas
+│   ├── pages/          # Páginas del sitio
+│   └── assets/         # Recursos del proyecto
+├── package.json
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🌟 Características
 
-## 🧞 Commands
+- ⚡ **Rendimiento optimizado** con Astro
+- 📱 **Diseño responsive** con Tailwind CSS
+- 🎨 **Interfaz moderna** y profesional
+- 🔍 **SEO optimizado**
+- 📄 **Descarga directa del CV**
+- 🚀 **Carga rápida** y experiencia fluida
 
-All commands are run from the root of the project, from a terminal:
+## 📧 Contacto
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Si tienes alguna pregunta o te interesa colaborar en un proyecto, no dudes en contactarme:
 
-## 👀 Want to learn more?
+- **Email**: [cfloren01@gmail.com](mailto:cfloren01@gmail.com)
+- **LinkedIn**: [Ciro Florentin](https://www.linkedin.com/in/ciro-florentiin)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+⭐ **¡Gracias por visitar mi portafolio!** ⭐
