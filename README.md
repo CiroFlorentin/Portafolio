@@ -8,7 +8,7 @@ Soy Ciro Florentin, desarrollador apasionado por crear soluciones web innovadora
 
 ## 📄 Mi CV
 
-**[📥 Descargar mi CV en PDF](./public/cv-ciro-florentin.pdf)**
+**[📥 Descargar mi CV en PDF](./public/cv-ciro-florentin.pdf.pdf)**
 
 ## 🛠️ Tecnologías utilizadas
 
